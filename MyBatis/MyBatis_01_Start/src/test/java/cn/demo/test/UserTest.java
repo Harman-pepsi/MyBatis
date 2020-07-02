@@ -25,6 +25,9 @@ public class UserTest {
         IUserMapper userMapper = sqlSession.getMapper(IUserMapper.class);
         List<User> userAll = userMapper.getUserAll();
 
+        //方式二
+        //List<User> userList = sqlSession.selectList("cn.demo.mapper.IUserMapper.getUserAll");
+
         //遍历
         for (User user : userAll) {
             System.out.println(user);
