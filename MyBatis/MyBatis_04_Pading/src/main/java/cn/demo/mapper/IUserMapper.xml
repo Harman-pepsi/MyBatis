@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.demo.mapper.IUserMapper">
+    <resultMap id="userMap" type="pojo_User">
+        <result column="id" property="uid"/>
+        <result column="username" property="name"/>
+        <result column="password" property="pwd"/>
+    </resultMap>
+    <select id="getUserAllOfLimit" parameterType="map" resultMap="userMap">
+        SELECT id,username,password FROM testdb.userinfo LIMIT #{startIndex},#{endIndex}
+    </select>
+</mapper>
