@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 注意properties、Alias顺序-->
+    <properties resource="db.properties"/>
+    <typeAliases>
+        <typeAlias type="cn.demo.pojo.User" alias="pojo_User"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/testdb?serverTimezone=GMT%2B8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        <mapper resource="cn/demo/mapper/IUserMapper.xml"/>-->
+        <!-- 使用class映射必须是的xml文件名称和mapper名称相同，且在同一个包下-->
+        <mapper class="cn.demo.mapper.IUserMapper"/>
+    </mappers>
+</configuration>
