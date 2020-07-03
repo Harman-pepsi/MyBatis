@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.demo.mapper.IEmployerMapper">
+    <select id="findEmployerAll" resultType="Employer">
+        select id,name,gender,age,intime,wages
+        from employer
+    </select>
+
+    <select id="findEmployerByCondition" resultType="Employer">
+        select id,name,gender,age,intime,wages
+        from employer
+        <where>
+            <choose>
+                <when test="gender != null">
+                    and gender = #{gender}
+                </when>
+                <when test="age != null">
+                    and age = #{age}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <update id="insertEmployer" parameterType="Employer">
+        insert into employer values(#{id},#{name},#{gender},#{age},#{intime},#{wages})
+    </update>
+
+</mapper>
