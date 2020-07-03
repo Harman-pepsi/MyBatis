@@ -16,6 +16,7 @@
         <module>MyBatis_05_Anno</module>
         <module>MyBatis_06_ManytoOne</module>
         <module>MyBatis_07_OneToMany</module>
+        <module>MyBatis_08_DynamicSQL</module>
     </modules>
 
     <dependencies>
