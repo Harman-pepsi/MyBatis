@@ -15,6 +15,7 @@
         <module>MyBatis_04_Pading</module>
         <module>MyBatis_05_Anno</module>
         <module>MyBatis_06_ManytoOne</module>
+        <module>MyBatis_07_OneToMany</module>
     </modules>
 
     <dependencies>
