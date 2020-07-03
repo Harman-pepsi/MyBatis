@@ -14,6 +14,7 @@
         <module>MyBatis_03_SQLNoMatch</module>
         <module>MyBatis_04_Pading</module>
         <module>MyBatis_05_Anno</module>
+        <module>MyBatis_06_ManytoOne</module>
     </modules>
 
     <dependencies>
