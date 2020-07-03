@@ -13,6 +13,7 @@
         <module>MyBatis_02_Optimzate</module>
         <module>MyBatis_03_SQLNoMatch</module>
         <module>MyBatis_04_Pading</module>
+        <module>MyBatis_05_Anno</module>
     </modules>
 
     <dependencies>
