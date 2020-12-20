@@ -3,13 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 注意properties、Alias顺序-->
     <properties resource="db.properties"/>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
     <typeAliases>
-        <typeAlias type="cn.demo.pojo.User" alias="pojo_User"/>
+        <package name="cn.demo.pojo"/>
     </typeAliases>
     <environments default="development">
-        <environment id="development">
+        <environment id="developemnt">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
                 <property name="driver" value="${jdbc.driver}"/>
@@ -20,10 +22,6 @@
         </environment>
     </environments>
     <mappers>
-        <!-- mapper扫描包的三种方式-->
-<!--        <mapper resource="cn/demo/mapper/IUserMapper.xml"/>-->
-        <!-- 使用class映射必须是的xml文件名称和mapper名称相同，且在同一个包下-->
-<!--        <mapper class="cn.demo.mapper.IUserMapper"/>-->
         <package name="cn.demo.mapper"/>
     </mappers>
 </configuration>

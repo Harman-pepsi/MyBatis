@@ -28,4 +28,5 @@ public class UserTest {
         }
         sqlSession.close();
     }
+
 }
